@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ReadBooks</string>
+    <string-array name="isRead">
+        <item>READ</item>
+        <item>READING</item>
+        <item>FOR READ</item>
+    </string-array>
+</resources>

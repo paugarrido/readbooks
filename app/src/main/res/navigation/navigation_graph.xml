@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/bookListFragment">
+
+    <fragment
+        android:id="@+id/bookFragment"
+        android:name="com.itb.readbooks.Fragments.BookFragment"
+        android:label="BookFragment" >
+        <action
+            android:id="@+id/action_bookFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment">
+            <argument
+                android:name = "BookModel"
+                app:argType="com.itb.readbooks.Models.BookModel"/>
+            <argument
+                android:name = "BookModelEditPosition"
+                app:argType="integer"
+                />
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="com.itb.readbooks.Fragments.BookListFragment"
+        android:label="BookListFragment" >
+        <action
+            android:id="@+id/action_bookListFragment_to_bookFragment"
+            app:destination="@id/bookFragment" >
+
+        </action>
+
+        <action
+            android:id="@+id/action_bookListFragment_to_bookFragmentEdit"
+            app:destination="@id/bookFragmentEdit" >
+            <argument
+                android:name = "BookModelEdit"
+                app:argType="com.itb.readbooks.Models.BookModel"/>
+            <argument
+                android:name = "BookModelEditPosition"
+                app:argType="integer"
+                />
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/bookFragmentEdit"
+        android:name="com.itb.readbooks.Fragments.BookFragmentEdit"
+        android:label="BookFragmentEdit" >
+        <action
+            android:id="@+id/action_bookFragmentEdit_to_bookListFragment"
+            app:destination="@id/bookListFragment" >
+            <argument
+                android:name = "BookModelEdit"
+                app:argType="com.itb.readbooks.Models.BookModel"/>
+            <argument
+                android:name = "BookModelEditPosition"
+                app:argType="integer"
+                />
+        </action>
+    </fragment>
+</navigation>
